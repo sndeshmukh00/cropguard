@@ -66,6 +66,11 @@ def new_data():
             # Creating the path for the image and secure check on the image filename.
             img_path = os.path.join(
                 base_path, 'new_data_files', secure_filename(new_filename))
+            
+            if not os.path.exists(os.path.join(
+                base_path, 'new_data_files')):
+                os.makedirs(os.path.join(
+                base_path, 'new_data_files'))
 
             # Saving the image into the root.
             image.save(img_path)
@@ -91,6 +96,10 @@ def predict():
         # Creating the path for the image and secure check on the image filename.
         img_path = os.path.join(
             base_path, 'upload_files', secure_filename(img_file.filename))
+
+        directory = os.path.join(base_path, 'upload_files')
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
         # Saving the image into the root.
         img_file.save(img_path)
@@ -124,12 +133,18 @@ def predict():
 
         # Returning the predicted class
         return render_template("prediction.html",
-            Name=disease_data['Name'],
-            Caused_by=disease_data['Caused_by'],
-            About=disease_data['About'],
-            More_info_link=disease_data['More_info_link'],
-            Cure=disease_data['Cure'],
-            Image_Path=pred.pred_img(disease_data['Name']))
+            # Name=disease_data['Name'],
+            # Caused_by=disease_data['Caused_by'],
+            # About=disease_data['About'],
+            # More_info_link=disease_data['More_info_link'],
+            # Cure=disease_data['Cure'],
+            # Image_Path=pred.pred_img(disease_data['Name']))
+            Name='Name of Disease',
+            Caused_by='Bacteria',
+            About='Kuchh to bhi hai',
+            More_info_link='Google Kar le',
+            Cure='Mujhe nahi pata',
+            Image_Path=pred.pred_img('आलू'))
     
     return render_template("index.html")
 

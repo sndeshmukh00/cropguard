@@ -4,7 +4,8 @@ from app import app
 
 # Connection string from MongoDb Atlas
 # CONN_STRING = "mongodb+srv://od_capstone:capPROJ123@cluster0.nrcft.mongodb.net/capstone-project?retryWrites=true&w=majority"
-CONN_STRING = "mongodb+srv://sheshnarayan:DrYFAe5nd5QAsjg0@cluster0.eux9sja.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp"
+CONN_STRING = "mongodb+srv://shanu05official:8TrDA7j2Qs4isb3N@cluster0.otbkjtz.mongodb.net/?retryWrites=true&w=majority"
+# CONN_STRING = "mongodb+srv://sheshnarayan:DrYFAe5nd5QAsjg0@cluster0.eux9sja.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp"
 
 # Initiating mongodb client
 def open_mongo_diseases(index):
